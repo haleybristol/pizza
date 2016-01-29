@@ -33,6 +33,14 @@ Pizza.prototype.pizzaPrice = function () {
   return onePrice;
 }
 
+
+$(document).ready(function() {
+  $("form#ticketForm").submit(function(event){
+    var size = $("select#size").val();
+    var topping = $("select#topping").val();
+    var testPizza = new Pizza(size, topping);
+    var finalPrice = testPizza.pizzaPrice();
+    $(".display").append("<p>Total: $" + onePrice + ".00" + "</p>");
 // function Ticket(movieName, movieTime, movieAge){
 //   this.movieName = movieName;
 //   this.movieTime = movieTime;
@@ -70,14 +78,7 @@ Pizza.prototype.pizzaPrice = function () {
 //   return result;
 // }
 //
-// $(document).ready(function() {
-//   $("form#ticketForm").submit(function(event){
-//     var movie = $("select#movie").val();
-//     var time = $("select#time").val();
-//     var age = $("select#age").val();
-//     var testTicket = new Ticket(movie, time, age);
-//     var finalPrice = testTicket.finalPrice();
-//     $(".display").append("<p>Total: $" + finalPrice + ".00" + "</p>");
+
 //     if(movie === "shining") {
 //       $("#shining").show();
 //     }
