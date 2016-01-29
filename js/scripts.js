@@ -12,8 +12,8 @@ Pizza.prototype.toppings = function() {
     return (10);
   } else if (this.pizzaTopping === 3) {
     return (11);
-  } else if (this.PizzaTopping === 4) {
-    return (1);
+  } else if (this.pizzaTopping === 4) {
+    return (12);
   } else {
     return (13);
   }
