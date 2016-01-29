@@ -10,24 +10,24 @@ img {
 }
 
 body {
-  background-image: url(http://img11.deviantart.net/b40f/i/2009/207/f/a/blood_spatter_by_zeds_stock.jpg);
+  background-image: url(../halo.jpg);
   background-size: cover;
 }
 
 .jumbotron {
-  background-image: url(http://feelgrafix.com/data_images/out/14/888948-smoke-wallpaper.jpg);
-  color: white;
-  font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
-  font-size: 35px;
-  font-style: normal;
-  font-variant: normal;
+  background-image: url(../poly.jpg);
   font-weight: 500;
+  color: black;
   line-height: 26.4px;
+  color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  text-align: center;
 }
 
-.tiny {
-  color:  #990000;
-}
 
 .container {
   background-color: rgba(0, 0, 0, 0.5);

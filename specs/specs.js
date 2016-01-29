@@ -23,4 +23,8 @@ describe('Pizza', function() {
     var testPizza = new Pizza ("no topping", "large");
     expect(testPizza.sizes()).to.equal(8);
   });
+
+  it("will return the price of a single pizza chosen by the user", function () {
+    var testPizza = new Pizza ()
+  })
 });

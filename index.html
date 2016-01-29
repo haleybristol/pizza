@@ -10,41 +10,34 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="jumbotron">Pizza Prototype<small class ="tiny">We use the very best methods to serve you the best kind of prototype..... Pizza.</small></h1>
-      <form id="ticketForm" action="index.html" method="post">
+      <h1 class="jumbotron">Pizza Prototype</h1>
+      <form id="pizzaForm" action="index.html" method="post">
         <div class="row">
           <div class="col-md-4">
-            <select id ="movie" class="form-control">
-              <option value="shining">The Shining</option>
-              <option value="strangers">The Strangers</option>
-              <option value="forest">The Forest</option>
-              <option value="zombies">Pride and Prejudice and Zombies</option>
+            <select id ="size" class="form-control">
+              <option value="shining">Small</option>
+              <option value="strangers">Medium</option>
+              <option value="forest">large</option>
             </select>
+          </div>
+          <div class="col-md-4">
+            <select id="topping" class="form-control">
+              <option value="12:00pm">spinach</option>
+              <option value="2:00pm">2:00pm</option>
+              <option value="6:00pm">6:00pm</option>
+              <option value="8:00">8:00pm</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <input class="btn btn-default" type="submit" value="Submit" id="submit">
+          </div>
         </div>
-        <div class="col-md-4">
-          <select id="time" class="form-control">
-            <option value="12:00pm">12:00pm</option>
-            <option value="2:00pm">2:00pm</option>
-            <option value="6:00pm">6:00pm</option>
-            <option value="8:00">8:00pm</option>
-          </select>
       </div>
-      <div class="col-md-4">
-        <select id="age" class="form-control">
-          <option value="18">Adult Age 17-59</option>
-          <option value="62">Senior Age 60+</option>
-        </select>
-      </div>
-      </div>
-    <input class="btn btn-default btn-danger" type="submit" value="Submit" id="submit">
   </form>
     <div class="clear">
     <div class="row">
       <div class="col-md-6">
-        <img src="images/shining.jpg" id="shining">
-        <img src="images/forest.jpg" id="forest">
-        <img src="images/strangers.jpg" id="strangers">
-        <img src="images/zombies.jpg" id="zombies">
+        <img src="../cat.jpg" id="cat">
       </div>
     </div>
     <span class="display">

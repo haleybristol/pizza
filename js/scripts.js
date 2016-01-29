@@ -41,6 +41,17 @@ $(document).ready(function() {
     var testPizza = new Pizza(size, topping);
     var finalPrice = testPizza.pizzaPrice();
     $(".display").append("<p>Total: $" + onePrice + ".00" + "</p>");
+
+    if(sizes === "medium") {
+      $("#cat").show();
+    } else {
+      $("#cat").show();
+    }
+    event.preventDefault()
+  });
+});
+
+
 // function Ticket(movieName, movieTime, movieAge){
 //   this.movieName = movieName;
 //   this.movieTime = movieTime;
@@ -79,12 +90,7 @@ $(document).ready(function() {
 // }
 //
 
-//     if(movie === "shining") {
-//       $("#shining").show();
-//     }
+
 //     if(movie === "forest") {
 //       $("#forest").show();
 //     }
-//     event.preventDefault()
-//   });
-// });
