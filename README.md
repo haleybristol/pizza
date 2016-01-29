@@ -1,6 +1,6 @@
 # _Pizza Picker_
 
-#### _This is a responsive webpage that collects information from the user, concerning what toppings and size pizza they would like, then calculates a price, 01/23/2016_
+#### _This is a responsive webpage that collects information from the user about what toppings and size pizza they would like, then calculates a price. 01/23/2016_
 
 #### By _**Haley Bristol**_
 
@@ -14,7 +14,7 @@ _This is an interactive webpage designed for Week 4 Epicodus code review. The Pi
 
 ## Technologies Used
 
-_JavaScipt & JQuery_
+_JavaScipt & JQuery,_
 _HTML & CSS_
 
 ### License
