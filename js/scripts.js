@@ -2,7 +2,6 @@ function Pizza(pizzaTopping, pizzaSize) {
   this.pizzaTopping = pizzaTopping;
   this.pizzaSize = pizzaSize;
 }
-
 Pizza.prototype.toppings = function() {
   if (this.pizzaTopping === 0) {
     return (8);
@@ -12,12 +11,28 @@ Pizza.prototype.toppings = function() {
     return (10);
   } else if (this.pizzaTopping === 3) {
     return (11);
-  } else if (this.pizzaTopping === 4) {
-    return (12);
+  } else if (this.PizzaTopping === 4) {
+    return (1);
   } else {
     return (13);
   }
 }
+
+Pizza.prototype.sizes = function() {
+  if (this.pizzaSize === "small") {
+    return (3);
+  } else if (this.pizzaSize === "medium") {
+    return (5);
+  } else if (this.pizzaSize === "large") {
+    return (8)
+  }
+}
+
+Pizza.prototype.pizzaPrice = function () {
+  var onePrice = this.toppings() + this.sizes();
+  return onePrice;
+}
+
 // function Ticket(movieName, movieTime, movieAge){
 //   this.movieName = movieName;
 //   this.movieTime = movieTime;

@@ -5,33 +5,22 @@ describe('Pizza', function() {
     expect(testPizza.pizzaSize).to.equal("medium");
   });
 
-  it("will return the price of a plain pizza with no toppings", function() {
-    var testPizza = new Pizza (0);
-    expect(testPizza.toppings("no topping")).to.equal(8);
+  it("will add $1 to every topping added up to five toppings", function() {
+    var testPizza = new Pizza ("no topping", "medium");
+    expect(testPizza.toppings()).to.equal(13);
   });
 
-  it("will return the price of a pizza with one topping", function() {
-    var testPizza = new Pizza (1);
-    expect(testPizza.toppings("one topping")).to.equal(9);
+   it ("will return the price of a small pizza", function() {
+    var testPizza = new Pizza ("no topping", "small");
+    expect(testPizza.sizes()).to.equal(3);
   });
 
-  it("will return the price of a pizza with two toppings", function() {
-    var testPizza = new Pizza (2);
-    expect(testPizza.toppings("two toppings")).to.equal(10);
-  });
-
-  it("will return the price of a pizza with three toppings", function() {
-    var testPizza = new Pizza (3);
-    expect(testPizza.toppings("three toppings")).to.equal(11);
-  });
-
-  it("will return the price of a pizza with four toppings", function() {
-    var testPizza = new Pizza (4);
-    expect(testPizza.toppings("four toppings")).to.equal(12);
-  });
-
-  it("will return the price of a pizza with five toppings", function()    {
-    var testPizza = new Pizza (5);
-    expect(testPizza.toppings("five toppings")).to.equal(13);
+  it ("will return the price of a small pizza", function() {
+   var testPizza = new Pizza ("no topping", "medium");
+   expect(testPizza.sizes()).to.equal(5);
+ });
+   it ("will return the price of a small pizza", function() {
+    var testPizza = new Pizza ("no topping", "large");
+    expect(testPizza.sizes()).to.equal(8);
   });
 });
