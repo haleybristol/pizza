@@ -14,7 +14,7 @@ Pizza.prototype.toppings = function() {
   } else if (this.pizzaTopping === 3) {
     toppingnumber = (11);
   } else if (this.PizzaTopping === 4) {
-    toppingnumber = (1);
+    toppingnumber = (12);
   } else {
     toppingnumber = (13);
   }
@@ -45,54 +45,10 @@ $(document).ready(function() {
     var topping = $("select#topping").val();
     var testPizza = new Pizza(size, topping);
     var finalPrice = testPizza.pizzaPrice(topping, size);
-    $(".display").append(finalPrice);
+    $(".display").prepend(finalPrice);
 
-    // $("#cat").show();
+    $("#cat").show().append();
 
     event.preventDefault()
   });
 });
-
-
-// function Ticket(movieName, movieTime, movieAge){
-//   this.movieName = movieName;
-//   this.movieTime = movieTime;
-//   this.movieAge = movieAge;
-// }
-//
-// Ticket.prototype.price = function(){
-//   if (this.movieAge >= 60) {
-//     return (8);
-//   } else if (this.movieAge <= 59 && this.movieAge > 12){
-//   return (10);
-//   } else {
-//     return (7);
-//   }
-// }
-//
-// Ticket.prototype.matinee = function(){
-//   if (this.movieTime <= "4:00pm") {
-//     return (1);
-//   } else {
-//     return (2);
-//   }
-// }
-//
-// Ticket.prototype.newRelease = function(){
-//   if (this.movieName === "The Forest" || this.movieName === "Pride and Prejudice and Zombies") {
-//     return (2);
-//   } else {
-//     return (1);
-//   }
-// }
-//
-// Ticket.prototype.finalPrice = function(){
-//   var result = this.price() + this.matinee() + this.newRelease();
-//   return result;
-// }
-//
-
-
-//     if(movie === "forest") {
-//       $("#forest").show();
-//     }
