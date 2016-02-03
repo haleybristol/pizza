@@ -1,41 +1,54 @@
 function Pizza(pizzaTopping, pizzaSize) {
-  this.pizzaTopping = pizzaTopping;
+  this.setPizzaTopping(parseInt(pizzaTopping));
   this.pizzaSize = pizzaSize;
+  //this.setPizzaSize(pizzaSize);
+  // this.pizzaTopping = this.toppings(parseInt(pizzaTopping));
+  // this.pizzaSize = this.sizes(pizzaSize);
+  //console.log(this.pizzaSize);
+  //console.log(this.pizzaTopping);
 }
-  var toppingnumber = 0
-Pizza.prototype.toppings = function() {
 
-  if (this.pizzaTopping === 0) {
-    toppingnumber = (8);
-  } else if (this.pizzaTopping === 1) {
-    toppingnumber = (9);
-  } else if (this.pizzaTopping === 2) {
-    toppingnumber = (10);
-  } else if (this.pizzaTopping === 3) {
-    toppingnumber = (11);
-  } else if (this.PizzaTopping === 4) {
-    toppingnumber = (12);
-  } else {
-    toppingnumber = (13);
+Pizza.prototype.setPizzaTopping = function(topping) {
+  //console.log(topping);
+  switch (topping) {
+    case 0:
+      this.pizzaTopping = 8;
+      break;
+    case 1:
+      this.pizzaTopping = 9;
+      break;
+    case 2:
+      this.pizzaTopping = 10;
+      break;
+    case 3:
+      this.pizzaTopping = 11;
+      break;
+    case 4:
+      this.pizzaTopping = 12;
+      break;
+    default:
+      this.pizzaTopping = 13;
+      break;
   }
-  return toppingnumber;
 }
-  var num = 0;
-Pizza.prototype.sizes = function() {
-  console.log(this.pizzaSize);
-  if (this.pizzaSize === "small") {
-    var num = 3;
-  } else if (this.pizzaSize === "medium") {
-    var num = 5;
-  } else if (this.pizzaSize === "large") {
-    var num = 8;
-  };
 
-  return num;
-};
+Pizza.prototype.getPizzaSize = function () {
+  //console.log(size)
+  switch (this.pizzaSize) {
+    case "small":
+      return 3;
+      break;
+    case "medium":
+      return 5;
+      break;
+    case "large":
+      return 8;
+      break;
+  }
+}
 
-Pizza.prototype.pizzaPrice = function (toppings, sizes) {
-  return toppings + sizes
+Pizza.prototype.pizzaPrice = function () {
+  return this.pizzaTopping + this.getPizzaSize();
 }
 
 
@@ -43,9 +56,13 @@ $(document).ready(function() {
   $("form#pizzaForm").submit(function(event){
     var size = $("select#size").val();
     var topping = $("select#topping").val();
-    var testPizza = new Pizza(size, topping);
-    var finalPrice = testPizza.pizzaPrice(topping, size);
-    $(".display").prepend(finalPrice);
+    console.log(size)
+    console.log(topping)
+    var testPizza = new Pizza(topping, size);
+    var finalPrice = testPizza.pizzaPrice();
+    //console.log(testPizza.pizzaSize);
+    //console.log(testPizza.pizzaTopping);
+    $(".display").html(finalPrice);
 
     $("#cat").show().append();
 
