@@ -1,71 +1,54 @@
 function Pizza(pizzaTopping, pizzaSize) {
-  this.setPizzaTopping(parseInt(pizzaTopping));
+  this.pizzaTopping = pizzaTopping;
   this.pizzaSize = pizzaSize;
-  //this.setPizzaSize(pizzaSize);
-  // this.pizzaTopping = this.toppings(parseInt(pizzaTopping));
-  // this.pizzaSize = this.sizes(pizzaSize);
-  //console.log(this.pizzaSize);
-  //console.log(this.pizzaTopping);
 }
 
-Pizza.prototype.setPizzaTopping = function(topping) {
-  //console.log(topping);
-  switch (topping) {
-    case 0:
-      this.pizzaTopping = 8;
-      break;
-    case 1:
-      this.pizzaTopping = 9;
-      break;
-    case 2:
-      this.pizzaTopping = 10;
-      break;
-    case 3:
-      this.pizzaTopping = 11;
-      break;
-    case 4:
-      this.pizzaTopping = 12;
-      break;
-    default:
-      this.pizzaTopping = 13;
-      break;
-  }
-}
+Pizza.prototype.price = function () {
+  var base = 5;
 
-Pizza.prototype.getPizzaSize = function () {
-  //console.log(size)
-  switch (this.pizzaSize) {
-    case "small":
-      return 3;
-      break;
-    case "medium":
-      return 5;
-      break;
-    case "large":
-      return 8;
-      break;
-  }
-}
+  if(this.pizzaSize === "small") {
+    base = base + (this.pizzaTopping.length * 2);
+  } else if (this.pizzaSize === "medium") {
+    base += 5 + (this.pizzaTopping.length * 2);
+  } else if (this.pizzaSize === "large") {
+    base += 7 + (this.pizzaTopping.length * 2);
+  };
+  console.log(base);
+  return base;
+};
 
-Pizza.prototype.pizzaPrice = function () {
-  return this.pizzaTopping + this.getPizzaSize();
-}
+// Pizza.prototype.getPizzaSize = function () {
+//   //console.log(size)
+//   switch (this.pizzaSize) {
+//     case "small":
+//       return 3;
+//       break;
+//     case "medium":
+//       return 5;
+//       break;
+//     case "large":
+//       return 8;
+//       break;
+//   }
+// }
 
 
 $(document).ready(function() {
   $("form#pizzaForm").submit(function(event){
-    var size = $("select#size").val();
-    var topping = $("select#topping").val();
-    console.log(size)
-    console.log(topping)
-    var testPizza = new Pizza(topping, size);
-    var finalPrice = testPizza.pizzaPrice();
-    //console.log(testPizza.pizzaSize);
-    //console.log(testPizza.pizzaTopping);
-    $(".display").html(finalPrice);
+    event.preventDefault();
+    var pizzaSize = $("select#size").val();
+    var pizzaTopping = []
+    $("input:checked").each(function(){
+      pizzaTopping.push($(this).val());
+    });
+    var testPizza = new Pizza(pizzaTopping, pizzaSize);
+    var finalPrice = testPizza.price();
+
+
+    $(".display").html("$" + finalPrice + ".00");
 
     $("#cat").show().append();
 
-    event.preventDefault()
+
   });
 });

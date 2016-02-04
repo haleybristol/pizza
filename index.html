@@ -14,35 +14,44 @@
       <form id="pizzaForm" action="index.html" method="post">
         <div class="row">
           <div class="col-md-4">
-            <select id ="size" class="form-control">
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">large</option>
-            </select>
+            <div class="checkbox toppings">
+              <label>
+              <input type="checkbox" value="pepperoni">Pepperoni</label>
+              </div>
+              <div class="checkbox toppings">
+                <label><input type="checkbox" value="sausage">Sausage</label>
+              </div>
+              <div class="checkbox toppings">
+                <label><input type="checkbox" value="onion">Onion</label>
+              </div>
+              <div class="checkbox toppings">
+                <label><input type="checkbox" value="mushrooms">Mushrooms</label>
+              </div>
+              <div class="checkbox toppings">
+                <label><input type="checkbox" value="pepper">Pepper</label>
+              </div>
+              <div class="checkbox toppings">
+                <label><input type="checkbox" value="spinach">Spinach</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <select id="size" class="form-control">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">large</option>
+              </select>
+            </div>
           </div>
-          <div class="col-md-4">
-            <select id="topping" class="form-control">
-              <option value=1>1</option>
-              <option value=2>2</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <input class="btn btn-default" type="submit" value="Submit" id="submit">
-            <br>
-          </div>
-        </div>
-
-      </form>
-          <div class="clear">
+        <button type="submit" class="btn">Get yr Pizza</button>
+        <div class="clear">
           <span class="display"></span>
           <div class="row">
             <div class="col-md-6">
               <img src="cat.jpg" id="cat">
             </div>
           </div>
-          </div>
         </div>
-      </div>
+      </form>
     </div>
   </body>
 </html>
